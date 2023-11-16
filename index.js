@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 
 // Create a Sequelize instance
-const sequelize = new Sequelize("database2", "root", "123456", {
+const sequelize = new Sequelize("database2", "root", "Anga0001kea", {
   host: "localhost",
   dialect: "mysql",
 });
@@ -47,7 +47,7 @@ OrderItem.belongsTo(Product);
 // Sync the models with the database
 async function syncDatabase() {
   try {
-    await sequelize.sync({ force: true }); // Use { force: true } to recreate tables on every app start
+    await sequelize.sync({ alter: true }); // Use { force: true } to recreate tables on every app start
     console.log("Database synchronized");
   } catch (error) {
     console.error("Error syncing database:", error);
@@ -99,7 +99,6 @@ app.use(async (req, res, next) => {
   next();
 });
 
-// Fetch all orders with associated order items and products
 // Fetch all orders with associated order items and products
 app.get("/orders", async (req, res) => {
   try {

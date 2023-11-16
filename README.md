@@ -1,6 +1,7 @@
 # sequelize-demo2
 
 install the packages:
+
 ```bash
 npm install
 ```
@@ -15,11 +16,13 @@ const sequelize = new Sequelize("database2", "root", "123456", {
 ```
 
 create an empty database:
+
 ```sql
 CREATE DATABASE database2;
-``````
+```
 
 Now run the server:
+
 ```bash
 npm start
 ```
@@ -29,6 +32,7 @@ This will create the tables and populates them with the sample data.
 in the browser, you can go to localhost:3000/orders to see the data
 
 you should see something like this:
+
 ```json
 [
   {
